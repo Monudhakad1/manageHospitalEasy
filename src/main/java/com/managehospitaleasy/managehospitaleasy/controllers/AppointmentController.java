@@ -16,7 +16,7 @@ public class AppointmentController {
     }
 
     @PostMapping
-    public Appointment addAppoitment (@RequestBody Appointment appointment){
+    public Appointment addAppointment (@RequestBody Appointment appointment){
         System.out.println("Adding appointment");
         return null;
     }

@@ -1,6 +1,11 @@
 package com.managehospitaleasy.managehospitaleasy.controllers;
 
+import com.managehospitaleasy.managehospitaleasy.Service.PatientService;
 import com.managehospitaleasy.managehospitaleasy.models.Patient;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -8,6 +13,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/patients")
 public class PatientControllers {
+
+    @Autowired
+    private PatientService patientService;
+
+
+
 
     @GetMapping
     public List<Patient> getAllPatients(){
