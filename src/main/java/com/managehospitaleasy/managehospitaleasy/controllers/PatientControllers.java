@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/patients")
 public class PatientControllers {
+//service Layer with controller layer
 
     @Autowired
     private PatientService patientService;
@@ -20,10 +21,11 @@ public class PatientControllers {
 
 
 
+
     @GetMapping
     public List<Patient> getAllPatients(){
         System.out.println("Getting all patients");
-        return null;
+        return patientService.getAllPatients();
 
     }
 
