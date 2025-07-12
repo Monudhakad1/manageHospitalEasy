@@ -27,4 +27,37 @@ public class BillService {
             return null;
         }
     }
+    public Bill createBill(Bill bill){
+        try{
+            System.out.println(
+                    "Adding Bill by id"
+            );
+            return bill;
+        }catch(Exception e){
+            System.out.println("Error message : " +  e.getMessage());
+            return null;
+        }
+    }
+
+    public void deleteBill (Long id){
+        try{
+            System.out.println(
+                    "Deleting Bill by id"
+            );
+        }catch(Exception e){
+            System.out.println("Error message : " +  e.getMessage());
+        }
+    }
+
+    public Bill updateBill(Bill bill){
+        try{
+            System.out.println(
+                    "Updating bill by id"
+            );
+            return bill;
+        }catch(Exception e){
+            System.out.println("Error message : " +  e.getMessage());
+            return null;
+        }
+    }
 }

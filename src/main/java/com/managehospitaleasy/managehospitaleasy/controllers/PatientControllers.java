@@ -32,20 +32,20 @@ public class PatientControllers {
     @PostMapping
     public Patient addPatient(@RequestBody Patient patient){
         System.out.println("Adding a patient");
-        return patient;
+        return patientService.createPatient(patient);
     }
 
 @GetMapping("/{id}")
     public Patient getPatientById (@PathVariable Long id){
         System.out.println("Getting patient by id");
 
-        return null;
+        return patientService.getPatientById(id);
     }
 
     @DeleteMapping("/{id}")
-    public Patient deletePatient(@PathVariable Long id){
+    public void deletePatient(@PathVariable Long id){
         System.out.println("Deleting a patient");
-        return null;
+         patientService.DeletePatient(id);
     }
 }
 // controller -> service -> repository ->

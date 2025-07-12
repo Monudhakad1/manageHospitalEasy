@@ -36,4 +36,37 @@ public class PatientService {
         }
     }
 
+    public Patient createPatient(Patient patient){
+        try{
+            System.out.println(
+                    "Adding patient by id"
+            );
+            return null;
+        }catch(Exception e){
+            System.out.println("Error message : " +  e.getMessage());
+            return null;
+        }
+    }
+
+    public void DeletePatient(Long id){
+        try{
+            System.out.println(
+                    "Deleting patient by id"
+            );
+        }catch(Exception e){
+            System.out.println("Error message : " +  e.getMessage());
+        }
+    }
+
+    public Patient updatePatient(Patient patient){
+        try{
+            System.out.println(
+                    "Updating patient by id"
+            );
+            return patient;
+        }catch(Exception e){
+            System.out.println("Error message : " +  e.getMessage());
+            return null;
+        }
+    }
 }
