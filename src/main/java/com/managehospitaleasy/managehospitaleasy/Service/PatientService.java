@@ -23,7 +23,7 @@ public class PatientService {
             return null;
         } catch (Exception e) {
             System.out.println("Error message: " + e.getMessage());
-            logger.error("An error occurred while fetching all patient details: {}", e.getMessage(), e);
+            logger.error("An error occurred while fetching all patient details: {}", e.getMessage());
             return null;
         }
     }
@@ -35,7 +35,7 @@ public class PatientService {
             return null;
         } catch (Exception e) {
             System.out.println("Error message: " + e.getMessage());
-            logger.error("An error occurred while fetching patient by id: {}", e.getMessage(), e);
+            logger.error("An error occurred while fetching patient by id: {}", e.getMessage());
             return null;
         }
     }
@@ -47,7 +47,7 @@ public class PatientService {
             return null;
         } catch (Exception e) {
             System.out.println("Error message: " + e.getMessage());
-            logger.error("An error occurred while creating patient: {}", e.getMessage(), e);
+            logger.error("An error occurred while creating patient: {}", e.getMessage());
             return null;
         }
     }
@@ -58,7 +58,7 @@ public class PatientService {
 
         } catch (Exception e) {
             System.out.println("Error message: " + e.getMessage());
-            logger.error("An error occurred while deleting patient: {}", e.getMessage(), e);
+            logger.error("An error occurred while deleting patient: {}", e.getMessage());
         }
     }
 
@@ -69,7 +69,7 @@ public class PatientService {
             return patient;
         } catch (Exception e) {
             System.out.println("Error message: " + e.getMessage());
-            logger.error("An error occurred while updating patient: {}", e.getMessage(), e);
+            logger.error("An error occurred while updating patient: {}", e.getMessage());
             return null;
         }
     }

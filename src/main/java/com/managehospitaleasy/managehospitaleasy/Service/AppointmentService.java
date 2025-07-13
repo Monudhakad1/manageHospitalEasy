@@ -1,14 +1,20 @@
 package com.managehospitaleasy.managehospitaleasy.Service;
 
 import com.managehospitaleasy.managehospitaleasy.models.Appointment;
-import com.managehospitaleasy.managehospitaleasy.models.Doctor;
-import org.springframework.boot.system.ApplicationPid;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.stereotype.Service;
 
 
 import java.util.List;
 @Service
 public class AppointmentService {
+
+    private static Logger logger= LoggerFactory.getLogger(AppointmentService.class);
+
+
     public List<Appointment> getAllAppointments(){
         try{
             System.out.println("Appointment in service layer");
@@ -16,6 +22,7 @@ public class AppointmentService {
 
         }catch (Exception e){
             System.out.println("Error message" + e.getMessage());
+            logger.error("An error occurred while updating appointment in service: {}", e.getMessage());
             return null;
         }
     }
@@ -27,6 +34,7 @@ public class AppointmentService {
         }
         catch (Exception e){
             System.out.println("Error message" + e.getMessage());
+            logger.error("An error occurred while updating appointment in service: {}", e.getMessage() );
             return null;
         }
     }
@@ -38,6 +46,7 @@ public class AppointmentService {
             return appointment;
         }catch(Exception e){
             System.out.println("Error message : " +  e.getMessage());
+            logger.error("An error occurred while updating appointment in service: {}", e.getMessage());
             return null;
         }
     }
@@ -48,7 +57,9 @@ public class AppointmentService {
                     "Deleting Appointment by id"
             );
         }catch(Exception e){
+
             System.out.println("Error message : " +  e.getMessage());
+            logger.error("An error occurred while updating appointment in service: {}", e.getMessage());
         }
     }
 
@@ -58,6 +69,7 @@ public class AppointmentService {
             return appointment;
         }catch(Exception e){
             System.out.println("Error message : " +  e.getMessage());
+            logger.error("An error occurred while updating appointment in service: {}", e.getMessage());
             return null;
         }
     }

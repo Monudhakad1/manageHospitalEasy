@@ -2,12 +2,15 @@ package com.managehospitaleasy.managehospitaleasy.Service;
 
 import com.managehospitaleasy.managehospitaleasy.models.Doctor;
 import com.managehospitaleasy.managehospitaleasy.models.Patient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
 public class DoctorService {
 
+    private static final Logger logger = LoggerFactory.getLogger(DoctorService.class);
     public List<Doctor> getAllDoctors(){
         try{
             System.out.println("getAllDoctors in service layer");
@@ -15,6 +18,7 @@ public class DoctorService {
 
         }catch (Exception e){
             System.out.println("Error message" + e.getMessage());
+            logger.error("An error occurred while getting all doctors", e.getMessage() );
             return null;
         }
     }
@@ -26,6 +30,7 @@ public class DoctorService {
         }
         catch (Exception e){
             System.out.println("Error message" + e.getMessage());
+            logger.error("An error occurred while getting doctor by id", e.getMessage() );
             return null;
         }
     }
@@ -37,6 +42,7 @@ public class DoctorService {
             return doctor;
         }catch(Exception e){
             System.out.println("Error message : " +  e.getMessage());
+            logger.error("An error occurred while creating doctor", e.getMessage() );
             return null;
         }
     }
@@ -48,6 +54,7 @@ public class DoctorService {
             );
         }catch(Exception e){
             System.out.println("Error message : " +  e.getMessage());
+            logger.error("An error occurred while deleting doctor", e.getMessage() );
         }
     }
 
@@ -59,6 +66,7 @@ public class DoctorService {
             return doctor;
         }catch(Exception e){
             System.out.println("Error message : " +  e.getMessage());
+            logger.error("An error occurred while updating doctor", e.getMessage() );
             return null;
         }
     }

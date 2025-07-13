@@ -2,12 +2,16 @@ package com.managehospitaleasy.managehospitaleasy.Service;
 
 import com.managehospitaleasy.managehospitaleasy.models.Bill;
 import com.managehospitaleasy.managehospitaleasy.models.Doctor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class BillService {
+    private static final Logger logger = LoggerFactory.getLogger(BillService.class);
+
     public List<Bill> getAllBill(){
         try{
             System.out.println("GetAllBill in service layer");
@@ -15,6 +19,7 @@ public class BillService {
 
         }catch (Exception e){
             System.out.println("Error message" + e.getMessage());
+            logger.error("An error occurred while retrieving all bill: {}", e.getMessage());
             return null;
         }
     }
@@ -26,6 +31,7 @@ public class BillService {
         }
         catch (Exception e){
             System.out.println("Error message" + e.getMessage());
+            logger.error("An error occurred while retrieving bill: {}", e.getMessage());
             return null;
         }
     }
@@ -37,6 +43,7 @@ public class BillService {
             return bill;
         }catch(Exception e){
             System.out.println("Error message : " +  e.getMessage());
+            logger.error("An error occurred while adding bill: {}", e.getMessage());
             return null;
         }
     }
@@ -48,6 +55,7 @@ public class BillService {
             );
         }catch(Exception e){
             System.out.println("Error message : " +  e.getMessage());
+            logger.error("An error occurred while deleting bill: {}", e.getMessage());
         }
     }
 
@@ -59,6 +67,7 @@ public class BillService {
             return bill;
         }catch(Exception e){
             System.out.println("Error message : " +  e.getMessage());
+            logger.error("An error occurred while updating bill: {}", e.getMessage());
             return null;
         }
     }
