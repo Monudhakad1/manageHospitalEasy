@@ -19,7 +19,7 @@ public class DoctorService {
         }
     }
 
-    public Doctor getDoctorById(int id){
+    public Doctor getDoctorById(Long id){
         try{
             System.out.println("getDoctorById in service layer");
             return null;

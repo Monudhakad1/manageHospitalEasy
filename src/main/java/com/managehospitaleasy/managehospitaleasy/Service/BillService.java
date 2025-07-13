@@ -2,9 +2,11 @@ package com.managehospitaleasy.managehospitaleasy.Service;
 
 import com.managehospitaleasy.managehospitaleasy.models.Bill;
 import com.managehospitaleasy.managehospitaleasy.models.Doctor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class BillService {
     public List<Bill> getAllBill(){
         try{
@@ -17,7 +19,7 @@ public class BillService {
         }
     }
 
-    public Bill getBillById(int id){
+    public Bill getBillById(Long id){
         try{
             System.out.println("bill in service layer");
             return null;

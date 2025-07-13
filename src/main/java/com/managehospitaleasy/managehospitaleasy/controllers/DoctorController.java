@@ -32,9 +32,9 @@ public class DoctorController {
         System.out.println("Getting doctor by id");
         return doctorService.getDoctorById(id);
     }
-    @DeleteMapping
-    public void deleteDoctorById(@RequestBody Doctor doctor){
+    @DeleteMapping("/{id}")
+    public void deleteDoctorById(@PathVariable Long id){
         System.out.println("Deleting doctor by id");
-
+        doctorService.DeleteDoctor(id);
     }
 }

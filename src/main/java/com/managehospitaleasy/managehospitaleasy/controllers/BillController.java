@@ -1,6 +1,8 @@
 package com.managehospitaleasy.managehospitaleasy.controllers;
 
+import com.managehospitaleasy.managehospitaleasy.Service.BillService;
 import com.managehospitaleasy.managehospitaleasy.models.Bill;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,26 +11,30 @@ import java.util.List;
 @RequestMapping("/api/v1/bill")
 public class BillController {
 
+    @Autowired
+    BillService billService;
+
     @GetMapping
     public List<Bill> getBills(){
         System.out.println("Getting bills");
-        return null;
+        return billService.getAllBill();
     }
 
     @PostMapping
     public Bill addBill(@RequestBody Bill bill){
         System.out.println("Adding bill");
-        return bill;
+        return billService.createBill(bill);
     }
 
     @GetMapping("/{id}")
     public Bill getBillById(@PathVariable Long id){
         System.out.println("Getting bill by id");
-        return null;
+        return billService.getBillById(id);
     }
 
-    @DeleteMapping
-    public void deleteBillById(@RequestBody Bill bill){
+    @DeleteMapping("/{id}")
+    public void deleteBillById(@PathVariable Long id){
         System.out.println("Deleting bill by id");
+        billService.deleteBill(id);
     }
 }

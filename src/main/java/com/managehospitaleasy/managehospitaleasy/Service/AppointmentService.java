@@ -3,9 +3,11 @@ package com.managehospitaleasy.managehospitaleasy.Service;
 import com.managehospitaleasy.managehospitaleasy.models.Appointment;
 import com.managehospitaleasy.managehospitaleasy.models.Doctor;
 import org.springframework.boot.system.ApplicationPid;
+import org.springframework.stereotype.Service;
+
 
 import java.util.List;
-
+@Service
 public class AppointmentService {
     public List<Appointment> getAllAppointments(){
         try{
