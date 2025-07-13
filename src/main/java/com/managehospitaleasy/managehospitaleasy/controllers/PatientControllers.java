@@ -45,13 +45,13 @@ public class PatientControllers {
 
     @DeleteMapping("/{id}")
     public void deletePatient(@PathVariable Long id){
-        System.out.println("Deleting a patient");
+        System.out.println("Deleting a patient with ID: " +id);
          patientService.deletePatient(id);
     }
     @PostMapping("/{id}")
     public Patient updatePatientById(@PathVariable Long id, @RequestBody Patient patient){
-        System.out.println("Updating Patient by id");
-        return patientService.updatePatient(patient);
+        System.out.println("Updating Patient With id : " + id);
+        return patientService.updatePatient(id, patient);
     }
 }
 // controller -> service -> repository ->

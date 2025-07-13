@@ -42,7 +42,7 @@ public class DoctorController {
     @PostMapping("/{id}")
     public Doctor updateDoctorById(@PathVariable Long id, @RequestBody Doctor doctor){
         System.out.println("Updating DOCTOR by id");
-        return doctorService.updateDoctor(doctor);
+        return doctorService.updateDoctor(id,doctor);
     }
 }
 

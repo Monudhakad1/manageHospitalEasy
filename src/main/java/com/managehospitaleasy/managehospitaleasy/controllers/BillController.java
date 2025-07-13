@@ -41,6 +41,6 @@ public class BillController {
     @PostMapping("/{id}")
     public Bill updateBillById(@PathVariable Long id, @RequestBody Bill bill){
         System.out.println("Updating bill by id");
-        return billService.updateBill(bill);
+        return billService.updateBill(id,bill);
     }
 }

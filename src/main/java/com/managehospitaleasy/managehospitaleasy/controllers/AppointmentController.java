@@ -42,7 +42,7 @@ public class AppointmentController {
     @PostMapping("/{id}")
     public Appointment updateAppointmentById(@PathVariable Long id, @RequestBody Appointment appointment){
         System.out.println("Updating Appointment by id");
-        return appointmentService.updateAppointment(appointment);
+        return appointmentService.updateAppointment(id,appointment);
     }
 }
 
