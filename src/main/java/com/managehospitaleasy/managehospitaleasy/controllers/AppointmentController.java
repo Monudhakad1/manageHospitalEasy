@@ -2,6 +2,7 @@ package com.managehospitaleasy.managehospitaleasy.controllers;
 
 import com.managehospitaleasy.managehospitaleasy.Service.AppointmentService;
 import com.managehospitaleasy.managehospitaleasy.models.Appointment;
+import com.managehospitaleasy.managehospitaleasy.models.Bill;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,6 +39,13 @@ public class AppointmentController {
         appointmentService.DeleteAppointment(id);
     }
 
-
-
+    @PostMapping("/{id}")
+    public Appointment updateAppointmentById(@PathVariable Long id, @RequestBody Appointment appointment){
+        System.out.println("Updating Appointment by id");
+        return appointmentService.updateAppointment(appointment);
+    }
 }
+
+
+
+

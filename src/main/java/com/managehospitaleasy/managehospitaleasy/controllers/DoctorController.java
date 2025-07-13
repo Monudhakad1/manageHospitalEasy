@@ -1,6 +1,7 @@
 package com.managehospitaleasy.managehospitaleasy.controllers;
 
 import com.managehospitaleasy.managehospitaleasy.Service.DoctorService;
+import com.managehospitaleasy.managehospitaleasy.models.Bill;
 import com.managehospitaleasy.managehospitaleasy.models.Doctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -37,4 +38,11 @@ public class DoctorController {
         System.out.println("Deleting doctor by id");
         doctorService.DeleteDoctor(id);
     }
+
+    @PostMapping("/{id}")
+    public Doctor updateDoctorById(@PathVariable Long id, @RequestBody Doctor doctor){
+        System.out.println("Updating DOCTOR by id");
+        return doctorService.updateDoctor(doctor);
+    }
 }
+

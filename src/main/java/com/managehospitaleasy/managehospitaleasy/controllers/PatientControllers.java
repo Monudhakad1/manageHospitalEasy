@@ -1,6 +1,7 @@
 package com.managehospitaleasy.managehospitaleasy.controllers;
 
 import com.managehospitaleasy.managehospitaleasy.Service.PatientService;
+import com.managehospitaleasy.managehospitaleasy.models.Doctor;
 import com.managehospitaleasy.managehospitaleasy.models.Patient;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -46,6 +47,11 @@ public class PatientControllers {
     public void deletePatient(@PathVariable Long id){
         System.out.println("Deleting a patient");
          patientService.deletePatient(id);
+    }
+    @PostMapping("/{id}")
+    public Patient updatePatientById(@PathVariable Long id, @RequestBody Patient patient){
+        System.out.println("Updating Patient by id");
+        return patientService.updatePatient(patient);
     }
 }
 // controller -> service -> repository ->

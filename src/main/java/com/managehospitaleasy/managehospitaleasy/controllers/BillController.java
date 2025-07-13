@@ -37,4 +37,10 @@ public class BillController {
         System.out.println("Deleting bill by id");
         billService.deleteBill(id);
     }
+
+    @PostMapping("/{id}")
+    public Bill updateBillById(@PathVariable Long id, @RequestBody Bill bill){
+        System.out.println("Updating bill by id");
+        return billService.updateBill(bill);
+    }
 }
