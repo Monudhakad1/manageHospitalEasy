@@ -71,7 +71,7 @@ public class BillService {
             );
             Optional<Bill> bill = billRepo.findById(id);
             if (bill.isPresent()) {
-                doctorRepo.deleteById(id);
+                billRepo.deleteById(id);
             }
             else {
                 System.out.println("Bill not found by id: " + id);

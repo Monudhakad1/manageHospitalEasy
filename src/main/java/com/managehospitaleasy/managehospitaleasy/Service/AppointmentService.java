@@ -93,7 +93,7 @@ public class AppointmentService {
                 a.setPatientId(updatedAppointment.getPatientId());
                 a.setDoctorId(updatedAppointment.getDoctorId());
             }
-
+            appointmentRepo.save(updatedAppointment);
             return updatedAppointment;
         }catch(Exception e){
             System.out.println("Error message : " +  e.getMessage());

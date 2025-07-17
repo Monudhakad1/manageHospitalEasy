@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1><i class="fas fa-hospital"></i> Hospital Management System</h1>
+        <nav>
+            <button class="nav-btn active" onclick="showSection('patients')">
+                <i class="fas fa-user-injured"></i> Patients
+            </button>
+            <button class="nav-btn" onclick="showSection('doctors')">
+                <i class="fas fa-user-md"></i> Doctors
+            </button>
+            <button class="nav-btn" onclick="showSection('appointments')">
+                <i class="fas fa-calendar-check"></i> Appointments
+            </button>
+            <button class="nav-btn" onclick="showSection('bills')">
+                <i class="fas fa-file-invoice"></i> Bills
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Patients Section -->
+        <section id="patients" class="content-section active">
+            <div class="section-header">
+                <h2>Patient Management</h2>
+                <button class="btn btn-primary" onclick="showAddForm('patient')">
+                    <i class="fas fa-plus"></i> Add Patient
+                </button>
+            </div>
+
+            <div id="patient-form" class="form-container" style="display: none;">
+                <h3 id="patient-form-title">Add New Patient</h3>
+                <form id="patientForm">
+                    <input type="hidden" id="patientId">
+                    <div class="form-group">
+                        <label for="patientName">Name:</label>
+                        <input type="text" id="patientName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientGender">Gender:</label>
+                        <select id="patientGender" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientAge">Age:</label>
+                        <input type="text" id="patientAge" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-success">Save</button>
+                        <button type="button" class="btn btn-secondary" onclick="hideForm('patient')">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <table id="patientsTable">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="patientsTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Doctors Section -->
+        <section id="doctors" class="content-section">
+            <div class="section-header">
+                <h2>Doctor Management</h2>
+                <button class="btn btn-primary" onclick="showAddForm('doctor')">
+                    <i class="fas fa-plus"></i> Add Doctor
+                </button>
+            </div>
+
+            <div id="doctor-form" class="form-container" style="display: none;">
+                <h3 id="doctor-form-title">Add New Doctor</h3>
+                <form id="doctorForm">
+                    <input type="hidden" id="doctorId">
+                    <div class="form-group">
+                        <label for="doctorName">Name:</label>
+                        <input type="text" id="doctorName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="doctorSpecialty">Specialty:</label>
+                        <input type="text" id="doctorSpecialty" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-success">Save</button>
+                        <button type="button" class="btn btn-secondary" onclick="hideForm('doctor')">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <table id="doctorsTable">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Specialty</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="doctorsTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Appointments Section -->
+        <section id="appointments" class="content-section">
+            <div class="section-header">
+                <h2>Appointment Management</h2>
+                <button class="btn btn-primary" onclick="showAddForm('appointment')">
+                    <i class="fas fa-plus"></i> Add Appointment
+                </button>
+            </div>
+
+            <div id="appointment-form" class="form-container" style="display: none;">
+                <h3 id="appointment-form-title">Add New Appointment</h3>
+                <form id="appointmentForm">
+                    <input type="hidden" id="appointmentId">
+                    <div class="form-group">
+                        <label for="appointmentPatient">Patient:</label>
+                        <select id="appointmentPatient" required>
+                            <option value="">Select Patient</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointmentDoctor">Doctor:</label>
+                        <select id="appointmentDoctor" required>
+                            <option value="">Select Doctor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointmentDate">Date:</label>
+                        <input type="date" id="appointmentDate" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-success">Save</button>
+                        <button type="button" class="btn btn-secondary" onclick="hideForm('appointment')">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <table id="appointmentsTable">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Patient ID</th>
+                        <th>Doctor ID</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="appointmentsTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Bills Section -->
+        <section id="bills" class="content-section">
+            <div class="section-header">
+                <h2>Bill Management</h2>
+                <button class="btn btn-primary" onclick="showAddForm('bill')">
+                    <i class="fas fa-plus"></i> Add Bill
+                </button>
+            </div>
+
+            <div id="bill-form" class="form-container" style="display: none;">
+                <h3 id="bill-form-title">Add New Bill</h3>
+                <form id="billForm">
+                    <input type="hidden" id="billId">
+                    <div class="form-group">
+                        <label for="billPatient">Patient:</label>
+                        <select id="billPatient" required>
+                            <option value="">Select Patient</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="billAmount">Amount:</label>
+                        <input type="number" id="billAmount" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="billStatus">Status:</label>
+                        <select id="billStatus" required>
+                            <option value="">Select Status</option>
+                            <option value="SUCCESSFUL">Successful</option>
+                            <option value="ON_PROCESS">On Process</option>
+                            <option value="HALF_DONE">Half Done</option>
+                            <option value="QUARTER_DONE">Quarter Done</option>
+                            <option value="NOT_COMPLETE">Not Complete</option>
+                            <option value="SPECIAL_PATIENT">Special Patient</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-success">Save</button>
+                        <button type="button" class="btn btn-secondary" onclick="hideForm('bill')">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <table id="billsTable">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Patient ID</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="billsTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
