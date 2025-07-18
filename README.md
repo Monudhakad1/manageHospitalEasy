@@ -339,5 +339,12 @@ We welcome contributions to ManageHospitalEasy! Here's how you can help:
 - **LinkedIn**: [Monu Dhakad](https://www.linkedin.com/in/monu-dhakad-42b525276/)
 - **Email**: monudhakad055@gmail.com
 
+## SomeScreenshot
+<img width="917" height="709" alt="Screenshot 2025-07-17 230040" src="https://github.com/user-attachments/assets/3962d493-d29e-4d45-ae1f-f8cd6cd77990" />
+<img width="1063" height="837" alt="Screenshot 2025-07-17 230118" src="https://github.com/user-attachments/assets/ddc96aa4-efe9-4d4e-8750-e708dda8874b" />
+<img width="921" height="486" alt="Screenshot 2025-07-17 230144" src="https://github.com/user-attachments/assets/f9c68a1b-9785-4e80-b630-77b9106adc3d" />
+<img width="931" height="603" alt="Screenshot 2025-07-17 230201" src="https://github.com/user-attachments/assets/793727e8-9254-4c13-a15b-8a6eac49dc12" />
+
+
 
 *Built with ❤️ using Spring Boot, JavaScript, and modern web technologies*
